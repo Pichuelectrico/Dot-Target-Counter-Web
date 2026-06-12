@@ -630,6 +630,65 @@
         letter-spacing: 0.05em;
       }
 
+      #team {
+        background: radial-gradient(
+          ellipse at center,
+          rgba(67, 176, 175, 0.06) 0%,
+          transparent 70%
+        );
+      }
+
+      .team-members {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        margin-top: 48px;
+        max-width: 640px;
+        width: 100%;
+      }
+
+      .team-member {
+        flex: 1 1 240px;
+        max-width: 300px;
+        background: var(--card-bg);
+        border: 1px solid rgba(67, 176, 175, 0.25);
+        border-radius: 16px;
+        padding: 20px 24px;
+        text-align: left;
+      }
+
+      .team-member strong,
+      .team-member .team-name-link {
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+
+      .team-member .team-name-link {
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .team-member .team-name-link:hover {
+        color: var(--accent);
+      }
+
+      .team-member span {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .team-tagline {
+        margin-top: 32px;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--accent-soft);
+      }
+
       #cta {
         background: radial-gradient(
           ellipse at bottom,
@@ -872,9 +931,7 @@
     <nav>
       <a class="logo" href="#hero">
         <img src="assets/logo_countmon.png" alt="Dot Target Counter logo" />
-        <div class="logo-text">
-          Dot Target Counter <span>/ by Joshua Reinoso</span>
-        </div>
+        <div class="logo-text">Dot Target Counter</div>
       </a>
       <div class="nav-right">
         <div class="nav-links">
@@ -1193,6 +1250,42 @@
       </div>
     </section>
 
+    <section id="team">
+      <div class="section-eyebrow reveal" data-i18n="team.eyebrow">
+        In development
+      </div>
+      <h2 class="section-title reveal reveal-delay-1">
+        <span data-i18n="team.title1">App in development</span><br /><span
+          class="accent"
+          data-i18n="team.titleAccent"
+          >with USFQ students.</span
+        >
+      </h2>
+      <p class="section-sub reveal reveal-delay-2" data-i18n="team.sub">
+        Biotechnology meets computer science — building tools for real research.
+      </p>
+
+      <div class="team-members reveal reveal-delay-3">
+        <div class="team-member">
+          <strong>Isaac Reinoso</strong>
+          <span data-i18n="team.isaac">Biotechnology Engineering · USFQ</span>
+        </div>
+        <div class="team-member">
+          <a
+            class="team-name-link"
+            href="https://portafolio-josh-reino.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Joshua Reinoso</a
+          >
+          <span data-i18n="team.joshua">Computer Science Engineering · USFQ</span>
+        </div>
+      </div>
+      <p class="team-tagline reveal reveal-delay-4" data-i18n="team.tagline">
+        Because together, we're better.
+      </p>
+    </section>
+
     <section id="cta">
       <img
         class="cta-logo reveal"
@@ -1252,10 +1345,7 @@
           rel="noopener noreferrer"
           >DotDotGoose</a
         >
-        <span data-i18n="cta.note2">by AMNH</span><br />
-        <span data-i18n="cta.note3">Developed by</span>
-        <strong>Joshua Reinoso</strong> · USFQ ·
-        <span data-i18n="cta.note4">Computer Science Engineering</span>
+        <span data-i18n="cta.note2">by AMNH</span>
       </p>
     </section>
 
@@ -1359,6 +1449,14 @@
           "ai.cardDesc":
             "Automatically detect, segment, and classify objects in your images — seeds, colonies, cells, anything. The model places the markers. You verify, correct, and stay in control. Your expertise drives the science; the AI handles the repetition.",
           "ai.soon": "⚡ Coming soon — stay tuned",
+          "team.eyebrow": "In development",
+          "team.title1": "App in development",
+          "team.titleAccent": "with USFQ students.",
+          "team.sub":
+            "Biotechnology meets computer science — building tools for real research.",
+          "team.isaac": "Biotechnology Engineering · USFQ",
+          "team.joshua": "Computer Science Engineering · USFQ",
+          "team.tagline": "Because together, we're better.",
           "cta.title1": "Ready to count",
           "cta.titleAccent": "smarter?",
           "cta.slogan": '"You dot the target, we\'ll count it."',
@@ -1368,8 +1466,6 @@
           "cta.note1":
             "Free & open source · GPL-3.0 · Built with PyQt6 · Based on",
           "cta.note2": "by AMNH",
-          "cta.note3": "Developed by",
-          "cta.note4": "Computer Science Engineering",
           "footer.built": "Built on",
         },
         es: {
@@ -1383,7 +1479,7 @@
           "hero.titleStrike": "estaba bien.",
           "hero.titleAccent": "Pero esto es mejor.",
           "hero.sub":
-            "Dot Target Counter es una herramienta libre y de código abierto para contar objetos manualmente en imágenes. Basada en DotDotGoose — ahora con espacios de trabajo, pestañas, flujos con teclado y una interfaz moderna.",
+            "Dot Target Counter es una herramienta gratuita y de código abierto para contar objetos manualmente en imágenes. Basada en DotDotGoose — ahora con espacios de trabajo, pestañas, flujos con teclado y una interfaz moderna.",
           "hero.badgeOld": "DotDotGoose · Original",
           "hero.badgeNew": "Dot Target Counter · v1.0",
           "hero.oldDesc":
@@ -1450,6 +1546,14 @@
           "ai.cardDesc":
             "Detecta, segmenta y clasifica objetos automáticamente en tus imágenes — semillas, colonias, células, lo que sea. El modelo coloca los marcadores. Tú verificas, corriges y mantienes el control. Tu experiencia impulsa la ciencia; la IA se encarga de la repetición.",
           "ai.soon": "⚡ Próximamente — mantente atento",
+          "team.eyebrow": "En desarrollo",
+          "team.title1": "App en desarrollo",
+          "team.titleAccent": "con estudiantes de la USFQ.",
+          "team.sub":
+            "Biotecnología y ciencias de la computación — construyendo herramientas para investigación real.",
+          "team.isaac": "Ingeniería en Biotecnología · USFQ",
+          "team.joshua": "Ingeniería en Ciencias de la Computación · USFQ",
+          "team.tagline": "Porque juntos somos mejores.",
           "cta.title1": "¿Listo para contar",
           "cta.titleAccent": "mejor?",
           "cta.slogan": '"Marca el objetivo, nosotros lo contamos."',
@@ -1457,10 +1561,8 @@
           "cta.btnInstall": "📖 Guía de instalación",
           "cta.btnOriginal": "🦆 DotDotGoose original",
           "cta.note1":
-            "Libre y de código abierto · GPL-3.0 · Hecho con PyQt6 · Basado en",
+            "Gratuita y de código abierto · GPL-3.0 · Hecho con PyQt6 · Basado en",
           "cta.note2": "del AMNH",
-          "cta.note3": "Desarrollado por",
-          "cta.note4": "Ingeniería en Ciencias de la Computación",
           "footer.built": "Basado en",
         },
       };
